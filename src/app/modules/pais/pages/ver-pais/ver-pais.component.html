@@ -1,0 +1,93 @@
+<div class="table table-hover animate__animated animate__fadeIn animate__slow">
+    <div class="alert alert-info">
+        Espere por favor...
+    </div>
+    <div *ngIf="pais" class="card text-left">
+        <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs">
+                <li class="nav-item">
+                    <strong><a class="nav-link active">País: {{pais.name}}</a></strong>
+                </li>
+
+            </ul>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-4">
+                    <strong>
+                        <h4>Bandera:</h4>
+                    </strong>
+                    <img [src]="pais.flag" class="med-flag">
+                </div>
+                <div class="col">
+
+                    <h4>Información</h4>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>Capital: </strong>{{pais.capital}}
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Código Númerico: </strong>{{pais.numericCode}}
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Código Alpha: </strong>{{pais.alpha3Code}}
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Región: </strong>{{pais.region|titlecase}}
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Sub-Región: </strong>{{pais.region|titlecase}}
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Área: </strong>{{pais.area|number}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <h3>Traducciones</h3>
+            <div class="row">
+                <div class="col">
+                    <span class="badge bg-primary mr-1">
+                        {{pais.translations.de}}
+                    </span>
+                    <span class="badge bg-primary mr-1">
+                        {{pais.translations.es}}
+                    </span>
+                    <span class="badge bg-primary mr-1">
+                        {{pais.translations.fr}}
+                    </span>
+                    <span class="badge bg-primary mr-1">
+                        {{pais.translations.ja}}
+                    </span>
+                    <span class="badge bg-primary mr-1">
+                        {{pais.translations.it}}
+                    </span>
+                    <span class="badge bg-primary mr-1">
+                        {{pais.translations.br}}
+                    </span>
+                    <span class="badge bg-primary mr-1">
+                        {{pais.translations.pt}}
+                    </span>
+                    <span class="badge bg-primary mr-1">
+                        {{pais.translations.nl}}
+                    </span>
+                    <span class="badge bg-primary mr-1">
+                        {{pais.translations.hr}}
+                    </span>
+                    <span class="badge bg-primary mr-1">
+                        {{pais.translations.fa}}
+                    </span>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col">
+
+                    <a href="#" class="btn btn-primary">Atras</a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

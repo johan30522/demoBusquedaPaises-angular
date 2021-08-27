@@ -1,0 +1,27 @@
+<div class="table table-hover animate__animated animate__fadeIn animate__slow">
+    <h2>Por País</h2>
+    <div class="row">
+
+        <app-pais-input [elementoBusqueda]="tipoBusqueda" (onEnter)="buscar($event)" (onDebounce)="sugerencias($event)">
+        </app-pais-input>
+
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item list-group-item-action" *ngFor="let pais of paisesSugeridos">
+            <a class="nav-link" [routerLink]="['/pais',pais.alpha2Code]">{{pais.name}}</a>
+        </li>
+        <li *ngIf="paisesSugeridos.length > 0" class="list-group-item list-group-item-action" (click)="buscar(termino)">
+            <a class="nav-link">
+                Buscar '{{termino}}'
+            </a>
+        </li>
+    </ul>
+
+    <hr>
+</div>
+<div *ngIf="existeError" class="alert alert-danger">
+    No se encontro nada con el término <b>"{{termino}}"</b>
+
+</div>
+<hr>
+<app-pais-tabla [listaElementos]="paisesSearch"></app-pais-tabla>

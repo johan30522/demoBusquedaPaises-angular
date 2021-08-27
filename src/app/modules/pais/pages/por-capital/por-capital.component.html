@@ -1,0 +1,19 @@
+<div class="table table-hover animate__animated animate__fadeIn animate__slow">
+    <h2>Por Capital</h2>
+    <hr>
+
+    <div class="row">
+        <div class="col">
+            <app-pais-input [elementoBusqueda]="tipoBusqueda" (onEnter)="buscar($event)" (onDebounce)="sugerencias($event)">
+            </app-pais-input>
+        </div>
+    </div>
+
+    <hr>
+    <div *ngIf="existeError" class="alert alert-danger">
+        No se encontro nada con el término <b>"{{termino}}"</b>
+
+    </div>
+
+    <app-pais-tabla [listaElementos]="paisesSearch"></app-pais-tabla>
+</div>
